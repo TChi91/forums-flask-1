@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+#menu {
+    height: 70px;
+    width: 100%;
+    background-color: #253342;
+    color: #FFF;
+}
+
+#logo {
+    float: left;
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu-item {
+    float: left;
+    padding: 10px;
+    list-style-type: none;
+    line-height: 40px;
+}
+
+
+.menu-all .menu-item:hover {
+    background-color: #0112b7;
+}
+.menu-all{
+    float: right;
+    padding-right: 20px;
+}
+
+a{
+    color: #FFF;
+}
+
+.content {
+    max-width: 700px;
+    margin-top: 50px;
+    border: solid black;
+    border-radius: 20px;
+    padding-bottom: 20px;
+
+}
+
+table td {
+    min-width: 75px;
+    padding-top: 20px;
+    margin-buttom: 20px;
+}
+
+table td:first-child {
+    min-width: 350px;
+}
+
+.content a{
+    color: black;
+}
+
+h2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#body-content{
+    margin-top: 20px;
+}
+
+input[type="text"], textarea {
+    background-color: white;
+    width: 20%;
+    height: 40px;
+    border: 2px solid #999;
+    border-radius: 15px;
+    margin: 15px 0;
+    direction: ltr;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 50%;
+    height: 250px;
+}
+
+form{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cta {
+    width: 190px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #39516b;
+    color: #FFF;
+    margin: 20px;
+    font-size: 120%;
+    box-shadow: 0 5px #999;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.08s;
+}.cta:active {
+    box-shadow: 0 0px #666;
+    transform: translateY(5px);
+
