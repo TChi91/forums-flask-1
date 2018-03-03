@@ -1,1 +1,3 @@
 *.pyc
+# PyCharm
+.idea
