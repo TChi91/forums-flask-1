@@ -2,5 +2,5 @@
 
 _YaserAlnajjar ----> Tutor_
 
-## BEST OF LUCK TO ALL BEGGINERS CODERS
+## BEST OF LUCK TO ALL BEGINNERS CODERS
 # forums-flask
