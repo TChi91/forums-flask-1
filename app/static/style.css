@@ -8,6 +8,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
+
 #container {
     width: 100%;
     margin: 0 auto;
@@ -54,11 +60,10 @@ a{
 
 .content {
     max-width: 700px;
-    margin-top: 50px;
+    margin-top: 30px;
     border: solid black;
     border-radius: 20px;
     padding-bottom: 20px;
-
 }
 
 table td {
@@ -107,13 +112,16 @@ form{
     text-align: center;
 }
 
-#wsfooter{
+.wsfooter{
+    position: fixed;
     clear: both;
     text-align: center;
     background-color: #253342;
     color: white;
     padding: 15px;
-    margin-top: 15px;
+    margin-top: 15px ;
+    width: 100%;
+    bottom: 0;
 }
 
 
@@ -132,4 +140,3 @@ form{
 }.cta:active {
     box-shadow: 0 0px #666;
     transform: translateY(5px);
-
