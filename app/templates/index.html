@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>One million arab coders</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 </head>
 <body>
     <div id="container">
@@ -28,23 +28,25 @@
                     {{post.title}}
                 </td>
                 <td>
-                    <a href="#">view</a>
+                    <a href="{{ url_for('topic_view', id = post.id) }}" target="_blank">view</a>
                 </td>
                 <td>
-                    <a href="#">edit</a>
+                    <a href="{{ url_for('topic_edit', id = post.id) }}">edit</a>
                 </td >
                 <td>
-                    <a href="#">delete</a>
+                    <a href="{{ url_for('topic_delete', id = post.id) }}">delete</a>
                 </td>
             </tr>
         {% endfor %}
             </tbody>
         </table>
     </div>
-    <footer id="wsfooter">
-        <h4>Done by: Majd Abboud</h4>
-        <br>
-        <p><a href="mailto:majdabboud81@gmail.com">Email: majdabboud81@gmail.com</a></p>
-    </footer>
+    <div>
+        <footer class="wsfooter">
+            <h4>Done by: Majd Abboud</h4>
+            <br>
+            <p><a href="mailto:majdabboud81@gmail.com">Email: majdabboud81@gmail.com</a></p>
+        </footer>
+    </div>
 </body>
 </html>
