@@ -10,7 +10,7 @@
         <nav id="menu">
             <h1 id="logo"> Arab Coders Forums </h1>
             <div class="menu-all"><ul>
-                <li class="menu-item"><a href="index"> Home </a></li>
+                <li class="menu-item"><a href="/index"> Home </a></li>
                 <li class="menu-item"><a href="#"> Members </a></li>
                 <li class="menu-item"><a href="#"> Categories </a></li>
                 <li class="menu-item"><a href="#"> Tutorials </a></li>
@@ -19,12 +19,17 @@
         </nav>
     </div>
 
-    <form action= "{{ url_for('topic_add') }}" method="post">
-        <h2> Create A New Post</h2>
-        <p><input type="text" name="title" placeholder="Title" /></p>
-        <p><textarea name="content" placeholder="Content"></textarea></p>
-        <p><input class="cta" type="submit" value="Create Post"/></p>
-    </form>
+        <form action= "{{ url_for('topic_edit', id=post.id) }}" method="POST">
+            <h2> Edit This Post</h2>
+            <br>
+            <br>
+            <h4>Title: </h4>
+            <p><input type="text" name="title" value="{{post.title}}"/></p>
+            <br>
+            <h4>Content: </h4>
+            <p><input type="text" style="height: 90px" name="content" value="{{post.content}}"/></p>
+            <p><input class="cta" type="submit" value="Update"/></p>
+        </form>
 
     <footer class="wsfooter">
         <h4>Done by: Majd Abboud</h4>
