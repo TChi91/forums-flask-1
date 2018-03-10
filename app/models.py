@@ -1,5 +1,6 @@
 import datetime
 
+
 # Members Class --------------->>>>>>
 
 class Members:
@@ -12,11 +13,19 @@ class Members:
     def __str__(self):
         return f"Name: {self.name}, Age: {self.age}"
 
+    def __dict__(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "age": self.age,
+            "posts": self.posts,
+            }
+
 
 # Posts Class --------------->>>>>>
 
 class Post:
-    def __init__(self,post_title,post_content, member_id=0):
+    def __init__(self, post_title, post_content, member_id=0):
         self.id = 0
         self.title = post_title
         self.content = post_content
@@ -25,3 +34,12 @@ class Post:
 
     def __str__(self):
         return f"Title: {self.title}, Content: {self.content}"
+
+    def __dict__(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "content": self.content,
+            "member_id": self.member_id,
+            }
+
