@@ -1,6 +1,7 @@
-from flask import render_template, request, redirect, url_for, abort
+from flask import render_template, request, redirect, url_for, abort, jsonify
 from app import models
 from app import app, member_store, post_store
+
 
 @app.route("/")
 @app.route("/index")
@@ -19,21 +20,11 @@ def topic_add():
         return render_template("topic_add.html")
 
 
-@app.route("/topic_delete/<int:id>")
-def topic_delete(id):
-    try:
-        post_store.delete(id)
-    except ValueError:
-        abort(404)
-
-    return redirect(url_for("home"))
-
-
 @app.route("/topic_view/<int:id>")
 def topic_view(id):
     post = post_store.get_by_id(id)
     if post is None:
-        abort(404)
+        abort(404, "Couldn't find this topic id !")
 
     return render_template("topic_view.html", post = post)
 
@@ -54,6 +45,16 @@ def topic_edit(id):
         return render_template("topic_edit.html", post = post)
 
 
+@app.route("/topic_delete/<int:id>")
+def topic_delete(id):
+    try:
+        post_store.delete(id)
+    except ValueError:
+        abort(404)
+
+    return redirect(url_for("home"))
+
+
 @app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+def page_not_found(error):
+    return render_template('404.html', message = error.description)
