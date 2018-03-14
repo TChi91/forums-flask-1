@@ -22,7 +22,7 @@ def topic_create():
     return result
 
 
-@app.route("/api/topic/view/<int:id>", methods=["VIEW"])
+@app.route("/api/topic/show/<int:id>", methods=["GET"])
 def topicView(id):
     post = post_store.get_by_id(id)
     try:
@@ -54,7 +54,7 @@ def topicUpdate(id):
 def topicDelete(id):
     try:
         result = post_store.delete(id)
-        result = jsonify(result.__dict__())
+        result = jsonify("topic with id " + str(id) + " deleted")
     except ValueError:
         result = abort(404, f"topic with id: {id} doesn't exist")
 
