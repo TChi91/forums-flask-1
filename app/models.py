@@ -21,8 +21,6 @@ class Members(db.Model):
         }
 
 
-posts = db.relationship("Post", backref="members")
-
 
 # Posts Class --------------->>>>>>
 
@@ -44,5 +42,3 @@ class Post(db.Model):
             "member_id": self.member_id,
         }
 
-
-member_id = db.Column(db.Integer, db.ForeignKey("members.id"))
