@@ -1,45 +1,48 @@
-import datetime
+from app import db
 
 
 # Members Class --------------->>>>>>
 
-class Members:
-    def __init__(self, member_name, member_age):
-        self.id = 0
-        self.name = member_name
-        self.age = member_age
-        self.posts = []
+class Members(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    age = db.Column(db.Integer)
+    posts = db.relationship("Post", backref="members")
 
-    def __str__(self):
-        return f"Name: {self.name}, Age: {self.age}"
+    def __repr__(self):
+        return f"Id: {self.id}, Name: {self.name}, Age: {self.age}"
 
-    def __dict__(self):
+    def as_dict(self):
         return {
             "id": self.id,
             "name": self.name,
             "age": self.age,
             "posts": self.posts,
-            }
+        }
+
+
+posts = db.relationship("Post", backref="members")
 
 
 # Posts Class --------------->>>>>>
 
-class Post:
-    def __init__(self, post_title, post_content, member_id=0):
-        self.id = 0
-        self.title = post_title
-        self.content = post_content
-        self.member_id = member_id
-        self.date = datetime.datetime.now()
 
-    def __str__(self):
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50))
+    content = db.Column(db.String(800))
+    member_id = db.Column(db.Integer, db.ForeignKey("members.id"))
+
+    def __repr__(self):
         return f"Title: {self.title}, Content: {self.content}"
 
-    def __dict__(self):
+    def as_dict(self):
         return {
             "id": self.id,
             "title": self.title,
             "content": self.content,
             "member_id": self.member_id,
-            }
+        }
 
+
+member_id = db.Column(db.Integer, db.ForeignKey("members.id"))
