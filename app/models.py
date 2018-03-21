@@ -42,3 +42,4 @@ class Post(db.Model):
             "member_id": self.member_id,
         }
 
+
