@@ -11,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 db = SQLAlchemy(app)
 
-from . import store, dummy_data
+from app import store, dummy_data
 
 member_store = store.MembersStore()
 post_store = store.PostsStore()
