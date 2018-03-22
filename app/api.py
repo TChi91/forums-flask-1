@@ -22,7 +22,7 @@ def topic_create():
     return result
 
 
-@app.route("/api/topic/show/<int:id>", methods=["GET"])
+@app.route("/api/topic/show/<int:id>")
 def topicView(id):
     post = post_store.get_by_id(id)
     try:

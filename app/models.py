@@ -21,7 +21,6 @@ class Members(db.Model):
         }
 
 
-
 # Posts Class --------------->>>>>>
 
 
@@ -41,5 +40,3 @@ class Post(db.Model):
             "content": self.content,
             "member_id": self.member_id,
         }
-
-

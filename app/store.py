@@ -39,8 +39,6 @@ class BaseStore():
 # MEMBERS FUNCS --------------------->>>>>>
 
 class MembersStore(BaseStore):
-    members = []
-    last_id = 1
 
     def __init__(self):
         super().__init__(models.Members)

@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os, psycopg2
+import os
 
 
 app = Flask(__name__)

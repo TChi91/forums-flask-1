@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, abort, jsonify
+from flask import render_template, request, redirect, url_for, abort
 from app import models
 from app import app, member_store, post_store
 
